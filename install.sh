@@ -63,12 +63,19 @@ pip install Pygments
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
+rm -f ~/.curlrc
 ln -s $SCRIPTPATH/.curlrc ~/.curlrc
+rm -f ~/.editorconfig
 ln -s $SCRIPTPATH/.editorconfig ~/.editorconfig
+rm -f ~/.vimrc
 ln -s $SCRIPTPATH/.vimrc ~/.vimrc
+rm -f ~/.wgetrc
 ln -s $SCRIPTPATH/.wgetrc ~/.wgetrc
+rm -f ~/.zshrc
 ln -s $SCRIPTPATH/.zshrc ~/.zshrc
 
+rm -fr ~/.oh-my-zsh/custom/plugins/ccat
 ln -s $SCRIPTPATH/oh-my-zsh-custom-plugins/ccat ~/.oh-my-zsh/custom/plugins/ccat
+rm -fr ~/.oh-my-zsh/custom/plugins/mac-utils
 ln -s $SCRIPTPATH/oh-my-zsh-custom-plugins/mac-utils ~/.oh-my-zsh/custom/plugins/mac-utils
 
