@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew github grails history man osx python sudo colored-man-pages ccat alias-tips st-andrews-servers mac-utils philtrans)
+plugins=(git brew github grails history man osx python sudo colored-man-pages ccat alias-tips mac-utils)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,4 +105,3 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/opt/zsh-git-prompt/zshrc.sh
 fpath=(/usr/local/share/zsh-completions $fpath)
-alias cat=ccat

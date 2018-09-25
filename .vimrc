@@ -45,6 +45,7 @@ colorscheme solarized
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 autocmd vimenter * NERDTree
+autocmd vimenter * wincmd p
 map <C-n> :NERDTreeToggle<CR>
 
 command! Clip w !pbcopy
@@ -71,6 +72,9 @@ set foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+command! Andbld !cd `git rev-parse --show-toplevel` && ./gradlew assembleDevDebug && cd - &
+command! Andrun !cd `git rev-parse --show-toplevel` && ./gradlew installDevDebug && cd - &
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
