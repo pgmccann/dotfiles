@@ -49,6 +49,7 @@ autocmd vimenter * wincmd p
 map <C-n> :NERDTreeToggle<CR>
 
 command! Clip w !pbcopy
+command! Mail w ! BODY=`cat` && open "mailto:?body=$BODY"
 
 augroup WrapLineInMdFile
     autocmd!
