@@ -32,9 +32,6 @@ function update() {
 	brew cleanup --prune-prefix
 	echo "Updating Oh My Zsh"
 	upgrade_oh_my_zsh
-	echo "Updating Ruby Gems"
-	gem update
-	gem cleanup
 	echo "Updating Atom packages"
 	apm upgrade --no-confirm
 	echo "Running Google Software Update"
