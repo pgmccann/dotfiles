@@ -109,6 +109,7 @@ if [ `uname -s` = "Darwin" ]; then
     mas install 937984704 #Amphetamine
     mas install 926036361 #LastPass
     mas install 1333542190 #1Password
+    mas install 823766827 #OneDrive
 
 fi
 
