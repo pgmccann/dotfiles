@@ -37,7 +37,7 @@ function update() {
 	echo "Running Google Software Update"
 	/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/CheckForUpdatesNow.command
 	echo "Launching Microsoft AutoUpdate"
-	open -a /Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app
+    /Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app/Contents/MacOS/msupdate -i
 	echo "Updating from Mac App Store"
 	m update install all
 	mas upgrade
