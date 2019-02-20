@@ -29,25 +29,14 @@ function update() {
 	brew update
 	brew upgrade
 	brew cask upgrade
-	brew prune
-	brew cleanup
+	brew cleanup --prune-prefix
 	echo "Updating Oh My Zsh"
 	upgrade_oh_my_zsh
 	echo "Updating Ruby Gems"
 	gem update
 	gem cleanup
-	echo "Updating Python Libraries"
-	pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
-	pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U
-	echo "Updating R Packages"
-	Rscript -e 'r = getOption("repos"); r ["CRAN"] = "https://cran.rstudio.com/"; options(repos = r); update.packages(ask = FALSE)'
 	echo "Updating Atom packages"
 	apm upgrade --no-confirm
-	echo "Updating Node"
-	npm i npm
-	npm i -g npm
-	npm update
-	npm update -g
 	echo "Running Google Software Update"
 	/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/CheckForUpdatesNow.command
 	echo "Launching Microsoft AutoUpdate"
