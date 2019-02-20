@@ -8,6 +8,14 @@ install_brew () {
     fi
 }
 
+install_cask () {
+    if brew cask ls --versions $1 > /dev/null; then
+        echo "$1 already installed"
+    else
+        brew cask install $@
+    fi
+}
+
 if [ `uname -s` = "Darwin" ]; then
 
     which -s brew
@@ -19,7 +27,12 @@ if [ `uname -s` = "Darwin" ]; then
     brew update
     brew upgrade --all
 
+    install_brew ack
+    install_brew ansible
+    install_brew ascii_doc
+    install_brew cask
     install_brew coreutils
+    install_brew ctags
     install_brew moreutils
     install_brew findutils
     install_brew gnu-sed --with-default-names
@@ -29,33 +42,73 @@ if [ `uname -s` = "Darwin" ]; then
     install_brew vim --override-system-vi
     install_brew grep
     install_brew screen
-    install_brew ack
-    install_brew ag
     install_brew git
     install_brew git-lfs
     install_brew imagemagick --with-webpi
     install_brew tree
     install_brew curl
     install_brew darksky-weather
+    install_brew findutils
     install_brew figlet
+    install_brew gist
+    install_brew git-extras
+    install_brew hub
+    install_brew jq
     install_brew jump
+    install_brew lastpass-cli
     install_brew lolcat
     install_brew m-cli
     install_brew make
     install_brew mas
+    install_brew moreutils
+    install_brew nano
     install_brew pandoc
-    install_brew python@2
     install_brew python3
+    install_brew sqlparse
+    install_brew the_silver_searcher
     install_brew tmux
-    install_brew tree
     install_brew zsh
     install_brew zsh-autosuggestions
     install_brew zsh-completions
     install_brew zsh-git-prompt
     install_brew zsh-syntax-highlighting
-    install_brew ctags
+
+    install_cask adobe-acrobat-reader
+    install_cask anaconda
+    install_cask android-studio
+    install_cask atom
+    install_cask docker
+    install_cask drafts
+    install_cask firefox
+    install_cask flash-player
+    install_cask font-fira-code
+    install_cask github
+    install_cask hazel
+    install_cask icloud-control
+    install_cask libreoffice
+    install_cask mactex
+    install_cask openrefine
+    install_cask send-to-kindle
+    install_cask sourcetree
+    install_cask textexpander
+    install_cask virtualbox
+    install_cask vlc
+    install_cask whatsapp
 
     brew cleanup
+
+    mas install 497799835 #Xcode
+    mas install 467939042 #Growl
+    mas install 1179623856 #Pastebot
+    mas install 881415018 #myTuner Radio
+    mas install 441258766 #Magnet
+    mas install 485812721 #Tweetdeck
+    mas install 1055511498 #Day One
+    mas install 803453959 #Slack
+    mas install 407963104 #Pixelmator
+    mas install 937984704 #Amphetamine
+    mas install 926036361 #LastPass
+    mas install 1333542190 #1Password
 
 fi
 
