@@ -73,6 +73,7 @@ if [ `uname -s` = "Darwin" ]; then
     install_brew zsh-git-prompt
     install_brew zsh-syntax-highlighting
 
+    install_cask iterm2
     install_cask adobe-acrobat-reader
     install_cask anaconda
     install_cask android-studio
@@ -83,6 +84,7 @@ if [ `uname -s` = "Darwin" ]; then
     install_cask flash-player
     install_cask font-fira-code
     install_cask github
+    install_cask google-chrome
     install_cask hazel
     install_cask icloud-control
     install_cask libreoffice
