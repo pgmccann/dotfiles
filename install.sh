@@ -97,7 +97,6 @@ if [ `uname -s` = "Darwin" ]; then
     install_cask vlc
     install_cask whatsapp
     install_cask microsoft-teams
-    install_cask microsoft-offce #Not sure this will work as expected
 
     brew cleanup
 
