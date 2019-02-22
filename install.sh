@@ -75,6 +75,7 @@ if [ `uname -s` = "Darwin" ]; then
 
     install_cask iterm2
     install_cask adobe-acrobat-reader
+    install_cask aerial
     install_cask anaconda
     install_cask android-studio
     install_cask atom
