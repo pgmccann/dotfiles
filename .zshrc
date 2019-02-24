@@ -86,8 +86,6 @@ source $ZSH/oh-my-zsh.sh
 
 DISABLE_UPDATE_PROMPT=true
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 eval "$(jump shell)"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
