@@ -34,9 +34,7 @@ function update() {
 	upgrade_oh_my_zsh
 	echo "Updating Atom packages"
 	apm upgrade --no-confirm
-	echo "Running Google Software Update"
-	/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/CheckForUpdatesNow.command
-	echo "Launching Microsoft AutoUpdate"
+	echo "Running Microsoft AutoUpdate"
     /Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app/Contents/MacOS/msupdate -i
 	echo "Updating from Mac App Store"
 	m update install all
