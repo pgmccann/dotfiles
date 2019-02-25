@@ -97,6 +97,7 @@ export PATH="/Users/pgm5/Library/Android/sdk/tools/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$(brew --prefix sqlite)/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 RPS1="%*"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
