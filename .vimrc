@@ -59,6 +59,7 @@ augroup END
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 autocmd BufWinEnter * NERDTreeMirror
 autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'

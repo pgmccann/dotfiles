@@ -1,7 +1,10 @@
 alias ssid='m wifi status | grep "^ \+SSID" | sed -n -e "s/^.*SSID: *//p"'
-alias ss='m screensaver'
-alias zz='m sleep'
+alias ss='m lock' #used to be screensaver
+alias zz='m lock && m sleep'
+alias ll='m lock'
 alias now='date | figlet | lolcat'
+alias status='m info && m hostname && m network ls && m battery status && m wifi status'
+alias batt='m battery status'
 
 function man() {
 	CLRD_MAN=$ZSH/plugins/colored-man-pages/colored-man-pages.plugin.zsh

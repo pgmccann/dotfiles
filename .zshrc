@@ -98,6 +98,8 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$(brew --prefix sqlite)/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="$PATH:/opt/cisco/anyconnect/bin"
+export PATH="/usr/local/anaconda3/bin:$PATH"
 RPS1="%*"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
