@@ -59,6 +59,8 @@ augroup END
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 autocmd BufWinEnter * NERDTreeMirror
 autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd VimEnter * wincmd p
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
 if executable('ag')

@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew github grails history man osx python sudo colored-man-pages ccat alias-tips mac-utils st-andrews-servers safe-paste)
+plugins=(git brew github grails history man osx python sudo colored-man-pages ccat mac-utils st-andrews-servers safe-paste)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,7 +106,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/opt/zsh-git-prompt/zshrc.sh
 fpath=(/usr/local/share/zsh-completions $fpath)
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/pgm5/.sdkman"
-[[ -s "/Users/pgm5/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/pgm5/.sdkman/bin/sdkman-init.sh"
+. ~/.linuxify
+eval "$(rbenv init -)"

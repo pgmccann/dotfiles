@@ -5,6 +5,7 @@ alias ll='m lock'
 alias now='date | figlet | lolcat'
 alias status='m info && m hostname && m network ls && m battery status && m wifi status'
 alias batt='m battery status'
+alias 6music='gst-play-1.0 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
 
 function man() {
 	CLRD_MAN=$ZSH/plugins/colored-man-pages/colored-man-pages.plugin.zsh
@@ -35,9 +36,13 @@ function update() {
 	brew cleanup --prune-prefix
 	echo "Updating Oh My Zsh"
 	upgrade_oh_my_zsh
+    echo "Running conda update"
+    conda update --all -y
 	echo "Updating Atom packages"
 	apm upgrade --no-confirm
-	echo "Running Microsoft AutoUpdate"
+    echo "Updating Vim plugins"
+    cd ~/.vim && git pull --recurse-submodules && cd -
+	echo "Updating Microsoft Office"
     /Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app/Contents/MacOS/msupdate -i
 	echo "Updating from Mac App Store"
 	m update install all
