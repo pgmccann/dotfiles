@@ -92,8 +92,8 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export DEFAULT_USER=`whoami`
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-export PATH="/Users/pgm5/Library/Android/sdk/platform-tools:$PATH"
-export PATH="/Users/pgm5/Library/Android/sdk/tools/bin:$PATH"
+export PATH="${HOME}/Library/Android/sdk/platform-tools:$PATH"
+export PATH="${HOME}/Library/Android/sdk/tools/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$(brew --prefix sqlite)/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
