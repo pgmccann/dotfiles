@@ -108,3 +108,4 @@ source /usr/local/opt/zsh-git-prompt/zshrc.sh
 fpath=(/usr/local/share/zsh-completions $fpath)
 . ~/.linuxify
 eval "$(rbenv init -)"
+export PATH="/usr/local/opt/openssl/bin:$PATH"

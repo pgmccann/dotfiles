@@ -51,11 +51,6 @@ map <C-n> :NERDTreeToggle<CR>
 command! Clip w !pbcopy
 command! Mail w ! BODY=`cat` && open "mailto:?body=$BODY"
 
-augroup WrapLineInMdFile
-    autocmd!
-    autocmd FileType md setlocal wrap
-augroup END
-
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 autocmd BufWinEnter * NERDTreeMirror
 autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
@@ -80,7 +75,4 @@ set foldlevel=2
 command! Andbld !cd `git rev-parse --show-toplevel` && ./gradlew assembleDevDebug && cd - &
 command! Andrun !cd `git rev-parse --show-toplevel` && ./gradlew installDevDebug && cd - &
 
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+map <F3> <Esc>:TlistToggle<CR>
