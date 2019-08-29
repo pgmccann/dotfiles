@@ -7,6 +7,10 @@ alias status='m info && m hostname && m network ls && m battery status && m wifi
 alias batt='m battery status'
 alias 6music='gst-play-1.0 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
 
+if command -v most > /dev/null 2>&1; then
+    export PAGER="most"
+fi
+
 function man() {
 	CLRD_MAN=$ZSH/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 	PGR='less'
