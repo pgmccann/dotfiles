@@ -127,10 +127,16 @@ rm -f ~/.editorconfig
 ln -s $SCRIPTPATH/.editorconfig ~/.editorconfig
 rm -f ~/.vimrc
 ln -s $SCRIPTPATH/.vimrc ~/.vimrc
+rm -f ~/.vim
+ln -s $SCRIPTPATH/.vim ~/.vim
 rm -f ~/.wgetrc
 ln -s $SCRIPTPATH/.wgetrc ~/.wgetrc
 rm -f ~/.zshrc
 ln -s $SCRIPTPATH/.zshrc ~/.zshrc
+rm -f ~/.tmux.conf
+ln -s $SCRIPTPATH/.tmux.conf ~/.tmux.conf
+rm -f ~/.tmux
+ln -s $SCRIPTPATH/.tmux ~/.tmux
 
 rm -fr ~/.oh-my-zsh/custom/plugins/ccat
 ln -s $SCRIPTPATH/oh-my-zsh-custom-plugins/ccat ~/.oh-my-zsh/custom/plugins/ccat
