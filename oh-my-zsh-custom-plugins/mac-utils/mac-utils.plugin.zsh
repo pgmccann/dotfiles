@@ -46,7 +46,7 @@ function update() {
 	apm upgrade --no-confirm
     echo "Updating Vim plugins"
     cd ~/.vim && git pull --recurse-submodules && cd -
-    echo "Upadting TMUX plugins"
+    echo "Updating TMUX plugins"
     ~/.tmux/plugins/tpm/bin/update_plugins all
 	echo "Updating Microsoft Office"
     /Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app/Contents/MacOS/msupdate -i
