@@ -121,6 +121,8 @@ pip install Pygments
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
+$SCRIPTPATH/linuxify/linuxify install
+
 rm -f ~/.curlrc
 ln -s $SCRIPTPATH/.curlrc ~/.curlrc
 rm -f ~/.editorconfig
