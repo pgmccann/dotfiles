@@ -85,3 +85,6 @@
 [submodule "linuxify"]
 	path = linuxify
 	url = git@github.com:fabiomaia/linuxify.git
+[submodule ".vim/bundle/scratch.vim"]
+	path = .vim/bundle/scratch.vim
+	url = git@github.com:vim-scripts/scratch.vim.git
