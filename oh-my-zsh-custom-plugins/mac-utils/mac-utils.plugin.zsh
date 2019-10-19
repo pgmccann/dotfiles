@@ -46,6 +46,7 @@ function update() {
 	apm upgrade --no-confirm
     echo "Updating Vim plugins"
     cd ~/.vim && git pull --recurse-submodules && cd -
+    export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/tpm
     echo "Updating TMUX plugins"
     ~/.tmux/plugins/tpm/bin/update_plugins all
 	echo "Updating Microsoft Office"
