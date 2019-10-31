@@ -6,6 +6,7 @@ alias now='date | figlet | lolcat'
 alias status='m info && m hostname && m network ls && m battery status && m wifi status'
 alias batt='m battery status'
 alias 6music='gst-play-1.0 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
+alias scratch='vim +Scratch +"set syntax=markdown"'
 
 if command -v most > /dev/null 2>&1; then
     export PAGER="most"
