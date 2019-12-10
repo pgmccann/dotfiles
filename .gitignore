@@ -1,3 +1,4 @@
 .vim/.netrwhist
 .tmux/plugins
 !.tmux/plugins/tmp
+.tmux/resurrect
