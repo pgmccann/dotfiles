@@ -7,27 +7,16 @@ alias status='m info && m hostname && m network ls && m battery status && m wifi
 alias batt='m battery status'
 alias 6music='gst-play-1.0 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
 alias scratch='vim +Scratch +"set syntax=markdown"'
+alias diff='diff-so-fancy'
+alias cat='bat'
+export BAT_PAGER='less'
+alias ls="exa"
 
 if command -v most > /dev/null 2>&1; then
     export PAGER="most"
 fi
 
-function man() {
-	CLRD_MAN=$ZSH/plugins/colored-man-pages/colored-man-pages.plugin.zsh
-	PGR='less'
-	OTHER_OPTS=0
-	while getopts ":P:" opt; do
-		case $opt in
-			P ) PGR=$OPTARG ;;
-			? ) OTHER_OPTS=1 ;;
-		esac
-	done
-	if (( OTHER_OPTS == 1 )) then
-		. $CLRD_MAN && man $@
-	else
-		/usr/bin/man -P cat ${@: -1} > /dev/null && (. $CLRD_MAN && man $@) || (${@: -1} --help > /dev/null && ${@: -1} --help | $PGR || echo "No help content found")
-	fi
-}
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 function update() {
 	# Ask for the administrator password upfront.
@@ -43,8 +32,6 @@ function update() {
 	upgrade_oh_my_zsh
     echo "Running conda update"
     conda update --all -y
-	echo "Updating Atom packages"
-	apm upgrade --no-confirm
     echo "Updating Vim plugins"
     cd ~/.vim && git pull --recurse-submodules && cd -
     export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/tpm
