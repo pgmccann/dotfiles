@@ -109,3 +109,5 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 . ~/.linuxify
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

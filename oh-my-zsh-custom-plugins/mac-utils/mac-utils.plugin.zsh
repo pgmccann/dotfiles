@@ -11,6 +11,8 @@ alias diff='diff-so-fancy'
 alias cat='bat'
 export BAT_PAGER='less'
 alias ls="exa"
+alias ping='prettyping --nolegend'
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
 if command -v most > /dev/null 2>&1; then
     export PAGER="most"
