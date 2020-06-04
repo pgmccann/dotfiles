@@ -7,12 +7,14 @@ alias status='m info && m hostname && m network ls && m battery status && m wifi
 alias batt='m battery status'
 alias 6music='gst-play-1.0 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
 alias scratch='vim +Scratch +"set syntax=markdown"'
-alias diff='diff-so-fancy'
 alias cat='bat'
 export BAT_PAGER='less'
 alias ls="exa"
 alias ping='prettyping --nolegend'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+function pdiff () {
+	diff -u $1 $2 | diff-so-fancy
+}
 
 if command -v most > /dev/null 2>&1; then
     export PAGER="most"
@@ -34,6 +36,8 @@ function update() {
 	upgrade_oh_my_zsh
     echo "Running conda update"
     conda update --all -y
+    echo "Running npm update"
+    npm update -g
     echo "Updating Vim plugins"
     cd ~/.vim && git pull --recurse-submodules && cd -
     export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/tpm
