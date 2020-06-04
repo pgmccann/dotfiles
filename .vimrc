@@ -58,10 +58,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd VimEnter * wincmd p
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 nnoremap & :&&<CR>
