@@ -111,3 +111,4 @@ eval "$(rbenv init -)"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
