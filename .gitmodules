@@ -82,3 +82,6 @@
 [submodule ".vim/bundle/scratch.vim"]
 	path = .vim/bundle/scratch.vim
 	url = git@github.com:vim-scripts/scratch.vim.git
+[submodule ".tmux/plugins/vim-tmux-navigator"]
+	path = .tmux/plugins/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
