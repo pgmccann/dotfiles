@@ -91,6 +91,24 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 export DEFAULT_USER=`whoami`
 
+## Main prompt
+build_prompt_() {
+  RETVAL=$?
+  prompt_status
+  prompt_vpn
+  prompt_virtualenv
+  prompt_aws
+  prompt_context
+  prompt_dir
+  prompt_git
+  prompt_bzr
+  prompt_hg
+  prompt_end
+}
+
+PROMPT='%{%f%b%k%}$(build_prompt_) '
+
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PATH="${HOME}/Library/Android/sdk/platform-tools:$PATH"
 export PATH="${HOME}/Library/Android/sdk/tools/bin:$PATH"

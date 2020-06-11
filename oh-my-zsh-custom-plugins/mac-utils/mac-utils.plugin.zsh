@@ -15,6 +15,14 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 function pdiff () {
 	diff -u $1 $2 | diff-so-fancy
 }
+alias vpnstatus='vpn status | grep -o "state:.*$" | uniq | sed "s/state:/VPN/"'
+alias vc='vpn connect vpn.st-andrews.ac.uk'
+alias vd='vpn disconnect'
+prompt_vpn() {
+  if [[ $(vpnstatus) == "VPN Connected" ]]; then
+    prompt_segment black default "🔒"
+  fi
+}
 
 if command -v most > /dev/null 2>&1; then
     export PAGER="most"
