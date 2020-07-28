@@ -16,7 +16,7 @@ function pdiff () {
 	diff -u $1 $2 | diff-so-fancy
 }
 alias vpnstatus='vpn status | grep -o "state:.*$" | uniq | sed "s/state:/VPN/"'
-alias vc='vpn connect vpn.st-andrews.ac.uk'
+alias vc='vpn connect vpn.st-andrews.ac.uk/duo'
 alias vd='vpn disconnect'
 prompt_vpn() {
   if [[ $(vpnstatus) == "VPN Connected" ]]; then
