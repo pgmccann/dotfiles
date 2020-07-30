@@ -132,3 +132,5 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+source /Users/pgm5/.config/broot/launcher/bash/br
