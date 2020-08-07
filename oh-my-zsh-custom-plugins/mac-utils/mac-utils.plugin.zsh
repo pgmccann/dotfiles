@@ -41,7 +41,7 @@ function update() {
 	brew cask upgrade
 	brew cleanup --prune-prefix
 	echo "Updating Oh My Zsh"
-	upgrade_oh_my_zsh
+	omz update
     echo "Running conda update"
     conda update --all -y
     echo "Running npm update"
