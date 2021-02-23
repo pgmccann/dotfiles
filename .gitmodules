@@ -106,3 +106,6 @@
 [submodule ".vim/bundle/vim-typings"]
 	path = .vim/bundle/vim-typings
 	url = https://github.com/mhartington/vim-typings
+[submodule ".vim/bundle/vim-pug"]
+	path = .vim/bundle/vim-pug
+	url = https://github.com/digitaltoad/vim-pug.git

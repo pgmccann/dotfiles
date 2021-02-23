@@ -1,3 +1,4 @@
+export EDITOR=/usr/local/bin/vim
 alias ssid='m wifi status | grep "^ \+SSID" | sed -n -e "s/^.*SSID: *//p"'
 alias ss='m lock' #used to be screensaver
 alias zz='m lock && m sleep'
@@ -15,6 +16,7 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 function pdiff () {
 	diff -u $1 $2 | diff-so-fancy
 }
+alias gh="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias vpnstatus='vpn status | grep -o "state:.*$" | uniq | sed "s/state:/VPN/"'
 alias vc='vpn connect vpn.st-andrews.ac.uk/duo'
 alias vd='vpn disconnect'
@@ -37,11 +39,10 @@ function update() {
 ###	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	echo "Updating Homebrew"
 	brew update
-	brew upgrade
-	brew cask upgrade
+	brew upgrade --greedy
 	brew cleanup --prune-prefix
 	echo "Updating Oh My Zsh"
-	omz update
+    $ZSH/tools/upgrade.sh
     echo "Running conda update"
     conda update --all -y
     echo "Running npm update"
@@ -51,11 +52,24 @@ function update() {
     export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/tpm
     echo "Updating TMUX plugins"
     ~/.tmux/plugins/tpm/bin/update_plugins all
+    echo "Mac software updates"
+	m update install all
+	echo "Updating from Mac App Store"
+	mas upgrade
 	echo "Updating Microsoft Office"
     /Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app/Contents/MacOS/msupdate -i
-	echo "Updating from Mac App Store"
-	m update install all
-	mas upgrade
 	sudo -k
 }
 
+# Enabling cdr as per https://github.com/willghatch/zsh-cdr
+if [[ -z "$ZSH_CDR_DIR" ]]; then
+    ZSH_CDR_DIR=${XDG_CACHE_HOME:-$HOME/.cache}/zsh-cdr
+fi
+mkdir -p $ZSH_CDR_DIR
+autoload -Uz chpwd_recent_dirs cdr
+autoload -U add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-file $ZSH_CDR_DIR/recent-dirs
+zstyle ':chpwd:*' recent-dirs-max 1000
+# fall through to cd
+zstyle ':chpwd:*' recent-dirs-default yes
