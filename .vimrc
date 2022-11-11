@@ -32,9 +32,10 @@ set showmatch
 set shell=zsh
 set mouse=a
 set path+=**
+set spell
 let g:netrw_liststyle=3
-autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
-set colorcolumn=80
+" autocmd BufWinEnter * highlight ColorColumn ctermbg=DarkGrey
+" set colorcolumn=80
 filetype plugin indent on
 runtime macros/matchit.vim
 if !exists("g:syntax_on")
@@ -42,14 +43,8 @@ if !exists("g:syntax_on")
 endif
 set background=dark
 colorscheme solarized
-let g:airline_theme='solarized'
-let g:airline_powerline_fonts=1
-autocmd vimenter * NERDTree
 autocmd vimenter * wincmd p
 map <C-n> :NERDTreeToggle<CR>
-
-command! Clip w !pbcopy
-command! Mail w ! BODY=`cat` && open "mailto:?body=$BODY"
 
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 autocmd BufWinEnter * NERDTreeMirror
@@ -71,4 +66,16 @@ set foldlevel=2
 command! Andbld !cd `git rev-parse --show-toplevel` && ./gradlew assembleDevDebug && cd - &
 command! Andrun !cd `git rev-parse --show-toplevel` && ./gradlew installDevDebug && cd - &
 
+"Had to install powerline using /usr/local/opt/python@3.9/bin/pip3 install powerline-status
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
 map <F3> <Esc>:TlistToggle<CR>
+
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:NERDTreeQuitOnOpen = 1
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif

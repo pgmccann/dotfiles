@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew github grails history man osx python sudo colored-man-pages mac-utils st-andrews-servers safe-paste)
+plugins=(git brew github grails history man macos python colored-man-pages mac-utils st-andrews-servers safe-paste docker docker-compose pyenv nvm npm node marked2 man web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,6 +108,8 @@ build_prompt_() {
 
 PROMPT='%{%f%b%k%}$(build_prompt_) '
 
+autoload zmv
+autoload zcalc
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PATH="${HOME}/Library/Android/sdk/platform-tools:$PATH"
@@ -130,11 +132,12 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 source /Users/pgm5/.config/broot/launcher/bash/br
 export PATH="/usr/local/anaconda3/bin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+eval "$(zoxide init zsh)"

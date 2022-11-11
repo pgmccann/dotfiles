@@ -3,7 +3,7 @@ alias ssid='m wifi status | grep "^ \+SSID" | sed -n -e "s/^.*SSID: *//p"'
 alias ss='m lock' #used to be screensaver
 alias zz='m lock && m sleep'
 alias ll='m lock'
-alias now='date | figlet | lolcat'
+alias now='date "+%a %_d %b %Y %T %Z" | figlet | lolcat'
 alias status='m info && m hostname && m network ls && m battery status && m wifi status'
 alias batt='m battery status'
 alias 6music='gst-play-1.0 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
@@ -17,14 +17,17 @@ function pdiff () {
 	diff -u $1 $2 | diff-so-fancy
 }
 alias gh="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias vpnstatus='vpn status | grep -o "state:.*$" | uniq | sed "s/state:/VPN/"'
-alias vc='vpn connect vpn.st-andrews.ac.uk/duo'
+alias vpnstatus='vpn status | grep -c Connected'
+alias vc='vpn connect https://vpn.st-andrews.ac.uk/duo'
 alias vd='vpn disconnect'
+# alias docker='open --background -a Docker && while ! docker system info > /dev/null 2>&1; do sleep 1; done && docker'
+alias docker-compose='open --background -a Docker && while ! docker system info > /dev/null 2>&1; do sleep 1; done && docker -v && docker-compose'
 prompt_vpn() {
-  if [[ $(vpnstatus) == "VPN Connected" ]]; then
-    prompt_segment black default "🔒"
+  if [ "$(vpnstatus)" -gt "0" ]; then
+    prompt_segment black default ""
   fi
 }
+alias ql='qlmanage -p'
 
 if command -v most > /dev/null 2>&1; then
     export PAGER="most"
@@ -47,6 +50,8 @@ function update() {
     conda update --all -y
     echo "Running npm update"
     npm update -g
+    echo "Running gem update"
+    gem update
     echo "Updating Vim plugins"
     cd ~/.vim && git pull --recurse-submodules && cd -
     export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/tpm
@@ -73,3 +78,4 @@ zstyle ':chpwd:*' recent-dirs-file $ZSH_CDR_DIR/recent-dirs
 zstyle ':chpwd:*' recent-dirs-max 1000
 # fall through to cd
 zstyle ':chpwd:*' recent-dirs-default yes
+eval $(thefuck --alias)

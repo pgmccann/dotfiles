@@ -108,10 +108,28 @@
 	url = https://github.com/preservim/nerdcommenter.git
 [submodule ".vim/bundle/auto-pairs"]
 	path = .vim/bundle/auto-pairs
-	url = git://github.com/jiangmiao/auto-pairs.git
+	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule ".vim/bundle/ale"]
 	path = .vim/bundle/ale
 	url = https://github.com/dense-analysis/ale.git
-[submodule ".vim/bundle/vim-visual-multi"]
-	path = .vim/bundle/vim-visual-multi
-	url = https://github.com/mg979/vim-visual-multi.git
+[submodule ".vim/bundle/vim-tmux-focus-events"]
+	path = .vim/bundle/vim-tmux-focus-events
+	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
+[submodule ".vim/bundle/vim-gutentags"]
+	path = .vim/bundle/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule ".vim/bundle/vim-prettier"]
+	path = .vim/bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier
+[submodule ".vim/bundle/vim-marked"]
+	path = .vim/bundle/vim-marked
+	url = https://github.com/itspriddle/vim-marked
+[submodule ".vim/bundle/linediff"]
+	path = .vim/bundle/linediff
+	url = https://github.com/AndrewRadev/linediff.vim.git
+[submodule ".vim/bundle/vimwiki"]
+	path = .vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
+[submodule ".vim/bundle/vim-auto-save"]
+	path = .vim/bundle/vim-auto-save
+	url = https://github.com/907th/vim-auto-save
