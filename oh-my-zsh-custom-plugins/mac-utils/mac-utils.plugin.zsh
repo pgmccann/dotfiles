@@ -1,4 +1,4 @@
-export EDITOR=/usr/local/bin/vim
+export EDITOR=vim
 alias ssid='m wifi status | grep "^ \+SSID" | sed -n -e "s/^.*SSID: *//p"'
 alias ss='m lock' #used to be screensaver
 alias zz='m lock && m sleep'
@@ -28,6 +28,7 @@ prompt_vpn() {
   fi
 }
 alias ql='qlmanage -p'
+alias vimwiki='cd ~/vimwiki && vim -c "let g:auto_save = 1 | normal \ww"'
 
 if command -v most > /dev/null 2>&1; then
     export PAGER="most"
