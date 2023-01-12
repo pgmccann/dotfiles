@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/`whoami`/.oh-my-zsh
+ZSH_DISABLE_COMPFIX=true
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -122,22 +123,27 @@ export PATH="$PATH:/opt/cisco/anyconnect/bin"
 
 RPS1="%*"
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/opt/zsh-git-prompt/zshrc.sh
-fpath=(/usr/local/share/zsh-completions $fpath)
-. ~/.linuxify
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/opt/zsh-git-prompt/zshrc.sh
+fpath=(/opt/homebrew/share/zsh-completions $fpath)
+# . ~/.linuxify
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 source /Users/pgm5/.config/broot/launcher/bash/br
-export PATH="/usr/local/anaconda3/bin:$PATH"
+export PATH="/opt/homebrew/anaconda3/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 eval "$(zoxide init zsh)"
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

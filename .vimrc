@@ -10,13 +10,14 @@ set incsearch
 set hlsearch
 set smartcase
 set hidden
-set nowrap
+set wrap
 set backspace=indent,eol,start
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set number
-set list listchars=tab:\ \ ,trail:·
+" set list listchars=tab:\ \ ,trail:·
+set nolist linebreak
 set timeout timeoutlen=1000 ttimeoutlen=100
 set encoding=utf-8
 set autoread
@@ -46,9 +47,9 @@ colorscheme solarized
 autocmd vimenter * wincmd p
 map <C-n> :NERDTreeToggle<CR>
 
-autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
+" autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 autocmd BufWinEnter * NERDTreeMirror
-autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
+" autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd VimEnter * wincmd p
 let g:NERDTreeNodeDelimiter = "\u00a0"
@@ -66,7 +67,7 @@ set foldlevel=2
 command! Andbld !cd `git rev-parse --show-toplevel` && ./gradlew assembleDevDebug && cd - &
 command! Andrun !cd `git rev-parse --show-toplevel` && ./gradlew installDevDebug && cd - &
 
-"Had to install powerline using /usr/local/opt/python@3.9/bin/pip3 install powerline-status
+"Had to install powerline using /opt/homebrew/Cellar/python@3.11/3.11.1/bin/pip3.11 install powerline-status
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
