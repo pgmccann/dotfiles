@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/commentary"]
 	path = .vim/bundle/commentary
 	url = https://tpope.io/vim/commentary.git
-[submodule ".vim/bundle/editorconfig-vim"]
-	path = .vim/bundle/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule ".vim/bundle/eunuch"]
 	path = .vim/bundle/eunuch
 	url = https://tpope.io/vim/eunuch.git
