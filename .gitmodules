@@ -130,3 +130,6 @@
 [submodule ".vim/bundle/vim-auto-save"]
 	path = .vim/bundle/vim-auto-save
 	url = https://github.com/907th/vim-auto-save
+[submodule ".vim/bundle/editorconfig-vim"]
+	path = .vim/bundle/editorconfig-vim
+	url = git@github.com:editorconfig/editorconfig-vim.git
