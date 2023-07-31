@@ -52,7 +52,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew github grails history man macos python colored-man-pages mac-utils st-andrews-servers safe-paste docker docker-compose pyenv nvm npm node marked2 man web-search)
+plugins=(git brew github history man macos python colored-man-pages mac-utils st-andrews-servers safe-paste docker docker-compose nvm npm node marked2 virtualenv tmuxinator zsh-interactive-cd xcode tmux ag adb azure fd pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -137,7 +137,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 source /Users/pgm5/.config/broot/launcher/bash/br
-export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+# export PATH="/opt/homebrew/anaconda3/bin:$PATH"  # commented out by conda initialize
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 eval "$(zoxide init zsh)"
@@ -147,3 +147,19 @@ PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/pgm5/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/pgm5/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/pgm5/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/pgm5/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
