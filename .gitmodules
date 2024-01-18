@@ -58,9 +58,6 @@
 [submodule ".vim/bundle/vim-bracketed-paste"]
 	path = .vim/bundle/vim-bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste
-[submodule ".vim/bundle/supertab.git"]
-	path = .vim/bundle/supertab.git
-	url = git@github.com:ervandew/supertab.git
 [submodule ".vim/bundle/vim-tmux-navigator"]
 	path = .vim/bundle/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator.git
@@ -136,3 +133,21 @@
 [submodule ".vim/bundle/vim-flake8"]
 	path = .vim/bundle/vim-flake8
 	url = git@github.com:nvie/vim-flake8.git
+[submodule ".vim/bundle/vim-virtualenv"]
+	path = .vim/bundle/vim-virtualenv
+	url = git@github.com:jmcantrell/vim-virtualenv
+[submodule ".vim/bundle/YouCompleteMe"]
+	path = .vim/bundle/YouCompleteMe
+	url = git@github.com:ycm-core/YouCompleteMe.git
+[submodule ".vim/bundle/ultisnips"]
+	path = .vim/bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule ".vim/bundle/vim-snippets"]
+	path = .vim/bundle/vim-snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule ".vim/bundle/django-plus.vim"]
+	path = .vim/bundle/django-plus.vim
+	url = git@github.com:tweekmonster/django-plus.vim.git
+[submodule ".vim/bundle/draft.vim"]
+	path = .vim/bundle/draft.vim
+	url = git@github.com:JakeRoggenbuck/draft.vim.git

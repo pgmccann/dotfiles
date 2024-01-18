@@ -1,4 +1,5 @@
-export EDITOR=vim
+export EDITOR=nvim
+alias python='python3'
 alias ssid='m wifi status | grep "^ \+SSID" | sed -n -e "s/^.*SSID: *//p"'
 alias ss='m lock' #used to be screensaver
 alias zz='m lock && m sleep'
@@ -7,16 +8,17 @@ alias now='date "+%a %_d %b %Y %T %Z" | figlet | lolcat'
 alias status='m info && m hostname && m network ls && m battery status && m wifi status'
 alias batt='m battery status'
 alias 6music='gst-play-1.0 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
-alias scratch='vim +Scratch +"set syntax=markdown"'
+alias scratch='nvim +Scratch +"set syntax=markdown"'
 alias cat='bat'
 export BAT_PAGER='less'
-alias ls="exa"
+alias ls="lsd"
 alias ping='prettyping --nolegend'
-alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias du="dust"
+alias df="duf --theme dark"
 function pdiff () {
 	diff -u $1 $2 | diff-so-fancy
 }
-alias gh="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias ghis="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias vpnstatus='vpn status | grep -c Connected'
 alias vc='vpn connect https://vpn.st-andrews.ac.uk/duo'
 alias vd='vpn disconnect'
@@ -28,7 +30,10 @@ prompt_vpn() {
   fi
 }
 alias ql='qlmanage -p'
-alias vimwiki='cd ~/vimwiki && vim -c "let g:auto_save = 1 | normal \ww"'
+alias vimwiki='source ~/.zshrc && cd ~/vimwiki && nvim -c "let g:auto_save = 1 | normal \ww"'
+alias pylint='python $(which pylint)'
+alias btm='if [[ $TERMCS == "light"  ]]; then btm --color=default-light; else btm; fi'
+alias vim='nvim'
 
 if command -v most > /dev/null 2>&1; then
     export PAGER="most"
@@ -47,14 +52,14 @@ function update() {
 	brew cleanup --prune-prefix
 	echo "Updating Oh My Zsh"
     $ZSH/tools/upgrade.sh
-    echo "Running conda update"
-    conda update --all -y
+    # echo "Running conda update"
+    # conda update --all -y
     echo "Running npm update"
     npm update -g
     echo "Running gem update"
     gem update
     echo "Updating Vim plugins"
-    cd ~/.vim && git pull --recurse-submodules && cd -
+    nvim +PlugUpdate +PlugUpgrade +qall
     export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/tpm
     echo "Updating TMUX plugins"
     ~/.tmux/plugins/tpm/bin/update_plugins all
@@ -80,3 +85,14 @@ zstyle ':chpwd:*' recent-dirs-max 1000
 # fall through to cd
 zstyle ':chpwd:*' recent-dirs-default yes
 eval $(thefuck --alias)
+
+LESSPIPE=`which src-hilite-lesspipe.sh`
+export LESSOPEN="| ${LESSPIPE} %s"
+export LESS=' -R '
+if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
+    export TERMCS="dark"
+    export BAT_THEME="Solarized (dark)"
+else
+    export TERMCS="light"
+    export BAT_THEME="Solarized (light)"
+fi

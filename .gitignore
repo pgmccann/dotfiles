@@ -1,5 +1,5 @@
 .vim/.netrwhist
 .tmux/plugins
-!.tmux/plugins/tmp
+!.tmux/plugins/tpm
 .tmux/resurrect
 tags
