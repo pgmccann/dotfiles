@@ -16,9 +16,10 @@ max_line_length = 79
 # Tab indentation (no size specified)
 [Makefile]
 indent_style = tab
+indent_size = 8
 
 # Matches the exact files either package.json or .travis.yml
-[*.{json,yml}]
+[*.{js,html,xml,css,json,yml}]
 indent_size = 2
 insert_final_newline = false
 

@@ -1,9 +1,9 @@
 export EDITOR=nvim
 alias python='python3'
 alias ssid='m wifi status | grep "^ \+SSID" | sed -n -e "s/^.*SSID: *//p"'
-alias ss='m lock' #used to be screensaver
-alias zz='m lock && m sleep'
+alias ss='m screensaver'
 alias ll='m lock'
+alias zz='m lock && m sleep'
 alias now='date "+%a %_d %b %Y %T %Z" | figlet | lolcat'
 alias status='m info && m hostname && m network ls && m battery status && m wifi status'
 alias batt='m battery status'
@@ -60,7 +60,6 @@ function update() {
     gem update
     echo "Updating Vim plugins"
     nvim +PlugUpdate +PlugUpgrade +qall
-    export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/tpm
     echo "Updating TMUX plugins"
     ~/.tmux/plugins/tpm/bin/update_plugins all
     echo "Mac software updates"

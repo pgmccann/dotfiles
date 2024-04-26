@@ -148,3 +148,4 @@ PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
+export PATH="/opt/homebrew/opt/tomcat@9/bin:$PATH"
