@@ -52,7 +52,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew github history man macos python colored-man-pages mac-utils st-andrews-servers safe-paste docker docker-compose nvm npm node marked2 virtualenv tmuxinator zsh-interactive-cd xcode tmux ag adb azure fd pip)
+plugins=(aliases alias-finder battery bgnotify command-not-found docker fzf git brew github history man macos python colored-man-pages mac-utils st-andrews-servers safe-paste docker docker-compose nvm npm node marked2 virtualenv tmuxinator zsh-interactive-cd xcode tmux pip gnu-utils httpie isodate macos postgres ssh sudo tmuxinator urltools yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,68 +84,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-DISABLE_UPDATE_PROMPT=true
-
-eval "$(jump shell)"
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-
-export DEFAULT_USER=`whoami`
-
-## Main prompt
-build_prompt_() {
-  RETVAL=$?
-  prompt_status
-  prompt_vpn
-  prompt_virtualenv
-  prompt_aws
-  prompt_context
-  prompt_dir
-  prompt_git
-  prompt_bzr
-  prompt_hg
-  prompt_end
-}
-
-PROMPT='%{%f%b%k%}$(build_prompt_) '
-
-autoload zmv
-autoload zcalc
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-export PATH="${HOME}/Library/Android/sdk/platform-tools:$PATH"
-export PATH="${HOME}/Library/Android/sdk/tools/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$(brew --prefix sqlite)/bin:$PATH"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="$PATH:/opt/cisco/anyconnect/bin"
-export PATH="$PATH:${HOME}/.cargo/bin"
-
-RPS1="%*"
-
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/opt/zsh-git-prompt/zshrc.sh
-fpath=(/opt/homebrew/share/zsh-completions $fpath)
-# . ~/.linuxify
-eval "$(rbenv init -)"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-source /Users/pgm5/.config/broot/launcher/bash/br
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-eval "$(zoxide init zsh)"
-PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-export PATH="/opt/homebrew/opt/tomcat@9/bin:$PATH"
