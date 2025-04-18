@@ -1,0 +1,12 @@
+android-studio
+basictex
+firefox
+font-hack-nerd-font
+google-chrome
+libreoffice
+microsoft-edge
+netnewswire
+r
+rstudio
+visual-studio-code
+wkhtmltopdf
